@@ -11,10 +11,10 @@ def writeTmp(AtomGroup):
 
 U = mda.Universe(sys.argv[1])
 
-protein_grp = U.select_atoms('resname ALA')
+protein_grp = U.select_atoms('protein')
 protein_grp = writeTmp(protein_grp)
 
-water_grp = U.select_atoms('resname SOL').select_atoms('resnum 10:12')
+water_grp = U.select_atoms('resname SOL')
 water_grp = writeTmp(water_grp)
 
 sodium_grp = U.select_atoms('resname NA')
@@ -23,19 +23,15 @@ chloride_grp = U.select_atoms('resname CL')
 def mapData(AtomGroup, forcefield):
 
 	if hasattr(AtomGroup.atoms, 'bonds'):
-		top = {
-			'bonds': AtomGroup.atoms.bonds.to_indices().tolist(),
-			'angles': AtomGroup.atoms.angles.to_indices().tolist(),
-			'dihedrals': AtomGroup.atoms.dihedrals.to_indices().tolist()
-		}
+		bonds = AtomGroup.atoms.bonds.to_indices().tolist(),
 	else:
-		top = None
+		bonds = None
 
 	return  {
 		'positions': AtomGroup.atoms.positions.tolist(),
 		'masses': AtomGroup.atoms.masses.tolist(),
 		'names': AtomGroup.atoms.names.tolist(),
-		'topology': top,
+		'bonds': bonds,
 		'forcefield': forcefield
 	}
 
@@ -48,6 +44,7 @@ chloride = mapData(chloride_grp, 'AMBER99')
 # simulation box
 box = {
 	'shape': 'cube',
+	'type' : ('periodic', 'periodic', 'periodic'),
 	'bound': U.atoms.bbox().tolist()
 }
 
@@ -56,9 +53,14 @@ data = {
 
     'box': box,
 
-    'props': {
-    	'pH': 7,
-    	'solvent_implicit': None,
+    'solvent': {
+	'implicit': True,
+	'algorithm': 'gen-born',
+	'radii_method': 'hct',
+	'radii_freq': 1,
+	'surf-tension': -1,
+	'dielectric': 80,
+	'salinity': 0.1
     }
 }
 
