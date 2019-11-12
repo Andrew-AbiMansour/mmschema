@@ -11,15 +11,14 @@ def writeTmp(AtomGroup):
 
 U = mda.Universe(sys.argv[1])
 
-protein_grp = U.select_atoms('protein')
+protein_grp = U.select_atoms('resname ALA')
 protein_grp = writeTmp(protein_grp)
 
-water_grp = U.select_atoms('resname SOL').select_atoms('resnum 1:10')
+water_grp = U.select_atoms('resname SOL').select_atoms('resnum 10:12')
 water_grp = writeTmp(water_grp)
 
 sodium_grp = U.select_atoms('resname NA')
 chloride_grp = U.select_atoms('resname CL')
-
 
 def mapData(AtomGroup, forcefield):
 

@@ -1,6 +1,3 @@
-<p style="text-align:center;"><img src="imgs/ala.png"></p>
-
-```
 {
     "box": {
         "bound": [
@@ -473,4 +470,3 @@
         "solvent_implicit": null
     }
 }
-```
