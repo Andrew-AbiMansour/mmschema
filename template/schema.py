@@ -28,6 +28,7 @@ def mapData(AtomGroup, forcefield):
 		bonds = None
 
 	return  {
+		'types': AtomGroup.atoms.types.tolist(),
 		'positions': AtomGroup.atoms.positions.tolist(),
 		'masses': AtomGroup.atoms.masses.tolist(),
 		'names': AtomGroup.atoms.names.tolist(),
@@ -64,5 +65,5 @@ data = {
     }
 }
 
-with open('bio.json', 'w') as fp:
-    json.dump(data, fp, sort_keys=True, indent=4, separators=(',', ': '))
+with open('protein.json', 'w') as fp:
+    json.dump(data, fp, sort_keys=False, indent=4, separators=(',', ': '))
