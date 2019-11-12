@@ -57,7 +57,7 @@ data = {
     'box': box,
 
     'props': {
-    	'pH': 2,
+    	'pH': 7,
     	'solvent_implicit': None,
     }
 }
