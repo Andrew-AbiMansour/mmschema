@@ -1,5 +1,5 @@
-Alanine in aqueous solution
-===========================
+Alanine residue in aqueous solution
+===================================
 
 <p style="text-align:center;"><img src="../../imgs/ala_aq.png"></p>
 

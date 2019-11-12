@@ -1,5 +1,5 @@
-Alanine
-=======
+Alanine residue
+===============
 
 <p style="text-align:center;"><img src="../../imgs/ala.png"></p>
 
