@@ -1,4 +1,4 @@
-{
+`{
     "box": {
         "bound": [
             [
@@ -1003,4 +1003,4 @@
         "pH": 7,
         "solvent_implicit": null
     }
-}
+}`
