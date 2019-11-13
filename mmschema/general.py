@@ -22,9 +22,13 @@ box = {
 
 data = {
     'version': '...',
+
     'units': 'nano',
+
     'molecule': molecule(),
+
     'box': box,
+
     'frac_coords (False)': 'boolean variable specifying if coordinates are fractional',
 
     'solvent (None)': {
@@ -35,7 +39,6 @@ data = {
 		'dielectric': 'dielectric constant',
 		'salinity': 'concentration of (virtual) ions'
     		},
-
 	'explicit (None)': {
 		'model': 'water model e.g. spc216',
 		'box (sim box)': [['xmin', 'ymin', 'zmin'], ['xmax', 'ymax', 'zmax']],
