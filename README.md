@@ -12,7 +12,9 @@ Keywords
 ```
 {
     "version": "...",
+
     "units": "nano",
+
     "molecule": {
         "types": "atomic element (e.g. C) or entity (e.g. CG) name",
         "positions": [
@@ -52,9 +54,14 @@ Keywords
                 "..."
             ]
         ],
-        "names (None)": "atomic labels e.g. CA1",
+        "names (None)": [
+		"list of atomic labels",
+		"e.g. CA",
+		"..."
+	],
         "forcefield (None)": "forcefield name (e.g. charmm27)"
     },
+
     "box": {
         "shape": "cube",
         "type": [
@@ -75,8 +82,11 @@ Keywords
             ]
         ]
     },
+
     "frac_coords (False)": "boolean variable specifying if coordinates are fractional",
+
     "solvent (None)": {
+
         "implicit (None)": {
             "model": "model name (e.g. gen-born)",
             "radii_method": "method name for estimation Born radii (e.g. hct)",
@@ -84,6 +94,7 @@ Keywords
             "dielectric": "dielectric constant",
             "salinity": "concentration of (virtual) ions"
         },
+
         "explicit (None)": {
             "model": "water model e.g. spc216",
             "box (sim box)": [
