@@ -50,6 +50,9 @@ box = {
 }
 
 data = {
+    'version': '...',
+    'units': 'nano',
+    'fractional_coords': False,
     'molecule': [protein, water, sodium, chloride],
 
     'box': box,
