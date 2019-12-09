@@ -79,8 +79,6 @@ Keywords
     "solvent (None)": {
 
         "implicit (None)": {
-            "model": "model name (e.g. gen-born)",
-            "radii_method": "method name for estimation Born radii (e.g. hct)",
             "surf_tension": "surface tension",
             "dielectric": "dielectric constant",
             "salinity": "concentration of (virtual) ions"
